@@ -1,0 +1,61 @@
+{
+    "hit_tests" : [
+        {
+            "name" : "flameguard_hit",
+            "dice_size" : "d6",
+            "num_of_dices" : 2,
+            "bonus" : 5,
+            "threshold" : 14,
+            "discard_lowest" : false,
+            "reroll" : false
+        },        
+        {
+            "name" : "flameguard_hit_aimed",
+            "dice_size" : "d6",
+            "num_of_dices" : 2,
+            "bonus" : 7,
+            "threshold" : 14,
+            "discard_lowest" : false,
+            "reroll" : false
+        },
+        {
+            "name" : "cont_fire_hit",
+            "dice_size" : "d6",
+            "num_of_dices" : 1,
+            "bonus" : 0,
+            "threshold" : 3,
+            "discard_lowest" : false,
+            "reroll" : false
+        }
+    ],
+
+    "damage_tests" : [
+        {
+            "name" : "flameguard_dmg",
+            "dice_size" : "d6",
+            "num_of_dices" : 2,
+            "bonus" : 14,
+            "threshold" : 16,
+            "discard_lowest" : false
+        },       
+        {
+            "name" : "cont_fire_dmg",
+            "dice_size" : "d6",
+            "num_of_dices" : 2,
+            "bonus" : 12,
+            "threshold" : 16,
+            "discard_lowest" : false
+        }
+    ],
+
+    "expressions" : [
+        {
+            "name" : "10 flameguards",
+            "value" : "10*flameguard_dmg[flameguard_hit] + cont_fire_dmg[cont_fire_hit]"
+        },
+        {
+            "name" : "10 flameguards aimed",
+            "value" : "10*flameguard_dmg[flameguard_hit_aimed] + cont_fire_dmg[cont_fire_hit]"
+        }
+    ]
+}
